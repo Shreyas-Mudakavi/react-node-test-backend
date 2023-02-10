@@ -13,10 +13,7 @@ app.use(cors());
 mongoose.set("strictQuery", false);
 const connect = async () => {
   try {
-    await mongoose.connect(
-      process.env.MONGO_URL ||
-        "mongodb+srv://react-node-test:quantuminnovation@cluster0.debatyt.mongodb.net/react-node-test?retryWrites=true&w=majority"
-    );
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("backend connected...");
   } catch (err) {
     console.log(err.message);
